@@ -1,0 +1,56 @@
+
+header{
+    background-color: blueviolet;
+    grid-area: header;
+}
+article{
+    background-color: aqua;
+    grid-area: article;
+}
+footer{
+    background-color: pink;
+    grid-area: footer;
+}
+nav{
+    background-color: yellow;
+    grid-area: nav;
+}
+card-element{
+    height: 200px;
+    width:150px;
+    margin:50px 10px;
+    
+}
+
+@media screen and (min-width:30em) {
+    main{
+        display:grid;
+        height:100vh;
+        grid-template-columns: 1fr 6fr;
+        grid-template-rows: 1fr 4fr 1fr;
+        grid-template-areas:"nav header" 
+                            "nav article" 
+                            "footer footer";
+    }  
+    .cardcontainer{
+        display:grid;
+        
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-area:auto;
+        
+        
+    }
+    
+}
+@media screen and (max-width: 30em) {
+    main{
+        display:grid;
+        height:100vh;
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:"header header" 
+                            "article article" 
+                            "nav nav";
+    }
+    
+}
+

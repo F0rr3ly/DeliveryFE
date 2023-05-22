@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "lanzarBrowsersync",
+            "type": "shell",
+            "command": "browser-sync start --server src -f \"**/*\" ./src --no-open",
+            "isBackground": true
+        },
+        {
+            "label": "detenerBrowsersync",
+            "type": "shell",
+            "command":"echo ${input:terminar}",
+            "problemMatcher":[]
+        }
+    ],
+    "inputs": [
+        {
+            "id": "terminar",
+            "type": "command",
+            "command": "workbench.action.tasks.terminate",
+            "args":"terminateAll"
+        }
+    ]
+}
