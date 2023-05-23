@@ -5,8 +5,9 @@ class CardElement extends HTMLElement{
         this.root=this.attachShadow({mode:"open"})
        
         this.data={
-            name:"holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-            image:"../../img-src/pikapika.webp"
+            name:"holaaaa",
+            image:"../../img-src/pikapika.webp",
+            id:"123"
         }
         
     }
@@ -33,10 +34,10 @@ class CardElement extends HTMLElement{
             <div class="card">
                 <img src="${this.data.image}" alt="Avatar" style="width:100%">
                 <div class="container">
-                    <h4><b>${this.data.name}</b></h4>
-                    <p>${this.data.name}</p>
+                <h4><b>${this.data.name}</b></h4>
+                <p>ID: ${this.data.id}</p>
                 </div>
-            </div> 
+            </div>
             
             <style>
             .card {
@@ -73,3 +74,32 @@ class CardElement extends HTMLElement{
 }
 customElements.define("card-element", CardElement);
 export default CardElement
+
+fetch("http://localhost:8080/Delivery/comercio", {
+  method: "GET",
+})
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Error en la solicitud");
+    }
+    return response.json();
+  })
+  .then((data) => {
+    const listaGetREST = data.map((item) => item);
+    console.log(listaGetREST);
+
+    // Obtener el contenedor donde se agregarán las cards
+    const container = document.getElementById("container");
+
+    // Crear una instancia de CardElement para cada ID y agregarlo al contenedor
+    listaGetREST.forEach((item) => {
+      const cardElement = new CardElement(item);
+      container.appendChild(cardElement);
+      cardElement.data = { ...cardElement.data, id: item.idComercio, name:item.nombre };
+      cardElement.dibujar();
+    });
+    
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
