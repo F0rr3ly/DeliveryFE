@@ -34,8 +34,8 @@ card-element{
     }  
     .cardcontainer{
         display:grid;
-        
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding-bottom: 20px;
+        grid-template-columns: 1fr 1fr 1fr;
         grid-area:auto;
         
         
@@ -50,6 +50,9 @@ card-element{
         grid-template-areas:"header header" 
                             "article article" 
                             "nav nav";
+    }
+    footer{
+        display: none ;
     }
     
 }
