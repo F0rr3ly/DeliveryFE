@@ -1,0 +1,16 @@
+{
+    "name":"App Delivery 2nd Entrega",
+    "short_name":"DeliveryAppli",
+    "start_url":"index.html",
+    "background_color":"#FFFFFF",
+    "theme_color":"#B2FFFF",
+    "orientation":"portrait-primary",
+    "display":"standalone",
+    "icons":[
+        {
+            "src":"/img-src/icons/icon_asuka_400x400.png",
+            "type":"image/png",
+            "sizes":"256x256"
+        }
+    ]
+}
