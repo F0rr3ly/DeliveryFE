@@ -1,7 +1,7 @@
 {
     "name":"App Delivery 2nd Entrega",
     "short_name":"DeliveryAppli",
-    "start_url":"index.html",
+    "start_url":"./index.html",
     "background_color":"#FFFFFF",
     "theme_color":"#B2FFFF",
     "orientation":"portrait-primary",
