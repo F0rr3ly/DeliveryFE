@@ -17,11 +17,24 @@
         </article>
         
         <footer>footer
-            <card-generator class="cardcontainer"></card-generator>
         </footer>
         <nav>nav</nav>
     </main>
 </body>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/serviceWorker.js')
+      .then(registration => {
+        console.log('Service Worker registrado con éxito:', registration);
+      })
+      .catch(error => {
+        console.log('Error al registrar el Service Worker:', error);
+      });
+  });
+}
+
+  </script>
 <script src="./main.js"></script>
 <script type="module" src="./scrpts/scrpts.js"></script>
 <script type="module" src="./webComponents/CardElement/cardElement.js"> </script>
