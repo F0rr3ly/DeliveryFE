@@ -3,7 +3,6 @@ class CardElement extends HTMLElement{
     constructor(){
         super();
         this.root=this.attachShadow({mode:"open"})
-       
         this.data={
             name:"holaaaa",
             image:"../../img-src/pikapika.webp",

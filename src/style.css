@@ -12,15 +12,26 @@ footer{
     grid-area: footer;
 }
 nav{
-    background-color: yellow;
+    background-color: rgb(8, 35, 63);
     grid-area: nav;
 }
+
 card-element{
     height: 200px;
     width:150px;
     margin:50px 10px;
     
 }
+nav-ele{
+    display: block;
+    color: #fefefe;
+    font-size: 20px;
+    padding: 0px 5px;
+    border-radius: 10px;
+    transition: 0.2s;
+    margin: 0 5px;
+}
+
 
 @media screen and (min-width:30em) {
     main{
